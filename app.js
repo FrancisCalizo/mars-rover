@@ -71,6 +71,7 @@ function moveForward(){
   console.log("moveForward was called");
   //first if statement checks for rover direction & if rover will move outside boundary
   if(rover.direction === "N" && rover.y > 0){
+    // rover.y -= 1 will work too
     rover.y += -1;
     //calls checkObstacles function. If returned true, specific coordinate will be incremented/decremented
     if(checkObstacles())rover.y+= 1;
@@ -96,12 +97,15 @@ function moveBackward(){
     rover.y += 1;
     //calls checkObstacles function. If returned true, specific coordinate will be incremented/decremented
     if(checkObstacles())rover.y+= -1;
+    // over here on line 100 you're not properly referencing the rover's direction (but you did before)
   } else if(direction === "E" && rover.x > 0 ){
     rover.x += -1;
     if(checkObstacles())rover.x+= 1;
+    // same thing as comment above
   } else if(direction === "S" && rover.y > 0){
     rover.y+= -1;
     if(checkObstacles())rover.y+= 1;
+    // same thing as comment above
   } else if(direction === "W" && rover.x < 10){
     rover.x += 1;
     if(checkObstacles())rover.x+= -1;
