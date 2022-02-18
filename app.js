@@ -26,8 +26,8 @@ var obstacles = {
 //
 
 // ======================
-//Welcome message with instructions
-console.log("Welcome to the Mars Rover App. Please use the 'command()' function with either 'l' , 'r', 'f', or 'b' as arguments to move the rover.");
+//Welcome message with instructions will shows 
+console.log("Welcome to the Mars Rover Assessment. Please use the 'command()' function with either 'l' , 'r', 'f',  as arguments to move the rover.");
 
 function turnLeft(){
   //takes in rover direction as argument and changes direction 90 degrees to the left
@@ -114,8 +114,8 @@ function moveBackward(){
 function command(str){
   //loop to iterate through string to see if any invalid inputs
   for(var i = 0; i < str.length; i++){
-    if(str[i] !== "l" && str[i] !== "r" && str[i] !== "f" && str[i] !== "b"){
-      return "The command string has an invalid input. Please use only 'l', 'r', 'f', or 'b'.";
+    if(str[i] !== "l" && str[i] !== "r" && str[i] !== "f"){
+      return "The command string has an invalid input. Please use only 'l', 'r', 'f'.";
     }
   } // if able to pass first for loop, this loop will iterate through string for rover commands
     for(i = 0; i < str.length; i++){
@@ -129,9 +129,7 @@ function command(str){
       case 'f':
         moveForward();
         break;
-      case 'b':
-        moveBackward();
-        break;
+      
     }
   } console.log(rover.travelLog);
 }
